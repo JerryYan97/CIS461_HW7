@@ -27,7 +27,7 @@ Color3f FullLightingIntegrator::Li(const Ray &ray, const Scene &scene, std::shar
 
         // Initialize common variable for integrator.
         Normal3f n = isect.normalGeometric;
-        Vector3f wo = - ray.direction;
+        Vector3f wo = - rayPath.direction;
 
         // Compute emitted light if ray hit an area light source.
         if(isect.objectHit->GetAreaLight())
