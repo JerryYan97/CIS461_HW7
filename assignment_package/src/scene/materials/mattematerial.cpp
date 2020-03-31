@@ -18,6 +18,8 @@ void MatteMaterial::ProduceBSDF(Intersection *isect) const
         Vector3f tangent, bitangent;
         CoordinateSystem(isect->bsdf->normal, &tangent, &bitangent);
         isect->bsdf->UpdateTangentSpaceMatrices(isect->bsdf->normal, tangent, bitangent);
+        // Check whether the normal map is truely applied.
+        // std::cout << "normal:" << isect->bsdf->normal.x << " " << isect->bsdf->normal.y << " " << isect->bsdf->normal.z << std::endl;
     }
 
     if(sigma == 0.f)

@@ -18,6 +18,8 @@ BSDF::BSDF(const Intersection& isect, float eta /*= 1*/)
 void BSDF::UpdateTangentSpaceMatrices(const Normal3f& n, const Vector3f& t, const Vector3f b)
 {
     //TODO: Update worldToTangent and tangentToWorld based on the normal, tangent, and bitangent
+    tangentToWorld = glm::mat3(t, b, n);
+    worldToTangent = glm::inverse(tangentToWorld);
 }
 
 

@@ -1,0 +1,300 @@
+{
+  "frames" :[
+    {
+    "frameNumber" : 0,
+    "scene" : {
+      "camera" : {
+        "target" : [0, 0, 0],
+        "eye" : [-20, 5, -50],
+        "worldUp" : [0, 1, 0],
+        "fov" : 19.5,
+        "width" : 512,
+        "height": 512
+      },
+      "primitives" : [
+        {
+          "shape" : "SquarePlane",
+          "name" : "Floor",
+          "material" : "stoneMaterial",
+          "transform" : {
+            "translate" : [0, -2.5, 0],
+            "rotate" : [-90, 0, 0],
+            "scale" : [10, 10, 1]
+          }
+        },
+        {
+          "shape" : "SquarePlane",
+          "name" : "Floor",
+          "material" : "stoneMaterial",
+          "transform" : {
+            "translate" : [0, -2.5, -10],
+            "rotate" : [-90, 0, 0],
+            "scale" : [10, 10, 1]
+          }
+        },
+        {
+          "shape" : "SquarePlane",
+          "name" : "Floor",
+          "material" : "stoneMaterial",
+          "transform" : {
+            "translate" : [0, -2.5, -20],
+            "rotate" : [-90, 0, 0],
+            "scale" : [10, 10, 1]
+          }
+        },
+        {
+          "shape" : "SquarePlane",
+          "name" : "Floor",
+          "material" : "stoneMaterial",
+          "transform" : {
+            "translate" : [0, -2.5, -30],
+            "rotate" : [-90, 0, 0],
+            "scale" : [10, 10, 1]
+          }
+        },
+        {
+          "shape" : "SquarePlane",
+          "name" : "Floor",
+          "material" : "stoneMaterial",
+          "transform" : {
+            "translate" : [0, -2.5, 10],
+            "rotate" : [-90, 0, 0],
+            "scale" : [10, 10, 1]
+          }
+        },
+        {
+          "shape" : "SquarePlane",
+          "name" : "Floor",
+          "material" : "stoneMaterial",
+          "transform" : {
+            "translate" : [10, -2.5, 0],
+            "rotate" : [-90, 0, 0],
+            "scale" : [10, 10, 1]
+          }
+        },
+        {
+          "shape" : "SquarePlane",
+          "name" : "Floor",
+          "material" : "stoneMaterial",
+          "transform" : {
+            "translate" : [10, -2.5, -10],
+            "rotate" : [-90, 0, 0],
+            "scale" : [10, 10, 1]
+          }
+        },
+        {
+          "shape" : "SquarePlane",
+          "name" : "Floor",
+          "material" : "stoneMaterial",
+          "transform" : {
+            "translate" : [10, -2.5, -20],
+            "rotate" : [-90, 0, 0],
+            "scale" : [10, 10, 1]
+          }
+        },
+        {
+          "shape" : "SquarePlane",
+          "name" : "Floor",
+          "material" : "stoneMaterial",
+          "transform" : {
+            "translate" : [10, -2.5, -30],
+            "rotate" : [-90, 0, 0],
+            "scale" : [10, 10, 1]
+          }
+        },
+        {
+          "shape" : "SquarePlane",
+          "name" : "Floor",
+          "material" : "stoneMaterial",
+          "transform" : {
+            "translate" : [10, -2.5, 10],
+            "rotate" : [-90, 0, 0],
+            "scale" : [10, 10, 1]
+          }
+        },
+        {
+          "shape" : "SquarePlane",
+          "name" : "Floor",
+          "material" : "stoneMaterial",
+          "transform" : {
+            "translate" : [-10, -2.5, 0],
+            "rotate" : [-90, 0, 0],
+            "scale" : [10, 10, 1]
+          }
+        },
+        {
+          "shape" : "SquarePlane",
+          "name" : "Floor",
+          "material" : "stoneMaterial",
+          "transform" : {
+            "translate" : [-10, -2.5, -10],
+            "rotate" : [-90, 0, 0],
+            "scale" : [10, 10, 1]
+          }
+        },
+        {
+          "shape" : "SquarePlane",
+          "name" : "Floor",
+          "material" : "stoneMaterial",
+          "transform" : {
+            "translate" : [-10, -2.5, -20],
+            "rotate" : [-90, 0, 0],
+            "scale" : [10, 10, 1]
+          }
+        },
+        {
+          "shape" : "SquarePlane",
+          "name" : "Floor",
+          "material" : "stoneMaterial",
+          "transform" : {
+            "translate" : [-10, -2.5, -30],
+            "rotate" : [-90, 0, 0],
+            "scale" : [10, 10, 1]
+          }
+        },
+        {
+          "shape" : "SquarePlane",
+          "name" : "Floor",
+          "material" : "stoneMaterial",
+          "transform" : {
+            "translate" : [-10, -2.5, 10],
+            "rotate" : [-90, 0, 0],
+            "scale" : [10, 10, 1]
+          }
+        },
+        {
+          "shape" : "Mesh",
+          "name" : "HanioTowerStick1",
+          "filename" : "mesh/cylinder.obj",
+          "material" : "woodMaterial",
+          "transform" : {
+            "translate" : [-5, -4, 0],
+            "rotate" : [0, 0, 0],
+            "scale" : [0.5, 0.5, 0.5]
+          }
+        },
+        {
+          "shape" : "Mesh",
+          "name" : "HanioTowerStick2",
+          "filename" : "mesh/cylinder.obj",
+          "material" : "woodMaterial",
+          "transform" : {
+            "translate" : [0, -4, 0],
+            "rotate" : [0, 0, 0],
+            "scale" : [0.5, 0.5, 0.5]
+          }
+        },
+        {
+          "shape" : "Mesh",
+          "name" : "HanioTowerStick3",
+          "filename" : "mesh/cylinder.obj",
+          "material" : "woodMaterial",
+          "transform" : {
+            "translate" : [5, -4, 0],
+            "rotate" : [0, 0, 0],
+            "scale" : [0.5, 0.5, 0.5]
+          }
+        }
+      ],
+      "lights" : [
+        {
+          "shape" : "SquarePlane",
+          "name" : "Light Source",
+          "type" : "DiffuseAreaLight",
+          "lightColor" : [10,10,10],
+          "intensity" : 4,
+          "transform" : {
+            "translate" : [0,9.5,0],
+            "rotate" : [90,0,0],
+            "scale" : [3, 3, 1]
+          },
+          "isDelta" : false,
+          "twoSided" : true
+        },
+
+        {
+          "shape" : "SquarePlane",
+          "name" : "Light Source",
+          "type" : "DiffuseAreaLight",
+          "lightColor" : [10,10,10],
+          "intensity" : 4,
+          "transform" : {
+            "translate" : [5,9.5,0],
+            "rotate" : [90,0,0],
+            "scale" : [3, 3, 1]
+          },
+          "isDelta" : false,
+          "twoSided" : true
+        },
+
+        {
+          "shape" : "SquarePlane",
+          "name" : "Light Source",
+          "type" : "DiffuseAreaLight",
+          "lightColor" : [10,10,10],
+          "intensity" : 4,
+          "transform" : {
+            "translate" : [-5,9.5,0],
+            "rotate" : [90,0,0],
+            "scale" : [3, 3, 1]
+          },
+          "isDelta" : false,
+          "twoSided" : true
+        },
+
+        {
+          "shape" : "SquarePlane",
+          "name" : "Light Source",
+          "type" : "DiffuseAreaLight",
+          "lightColor" : [10,9.5,10],
+          "intensity" : 4,
+          "transform" : {
+            "translate" : [0,9.5,10],
+            "rotate" : [90,0,0],
+            "scale" : [3, 3, 1]
+          },
+          "isDelta" : false,
+          "twoSided" : true
+        },
+
+        {
+          "shape" : "SquarePlane",
+          "name" : "Light Source",
+          "type" : "DiffuseAreaLight",
+          "lightColor" : [10,10,10],
+          "intensity" : 4,
+          "transform" : {
+            "translate" : [0,9.5,-10],
+            "rotate" : [90,0,0],
+            "scale" : [3, 3, 1]
+          },
+          "isDelta" : false,
+          "twoSided" : true
+        }
+      ],
+      "materials" : [
+        {
+          "type" : "MatteMaterial",
+          "name" : "matteWhite",
+            "Kd" : [0.85, 0.81, 0.78],
+          "sigma": 0
+        },
+        {
+          "type": "MatteMaterial",
+          "name": "stoneMaterial",
+          "Kd": [1, 1, 1],
+          "textureMap": "tex_nor_maps/stone.jpg",
+          "normalMap": "tex_nor_maps/stoneN.jpg"
+        },
+        {
+          "type": "MatteMaterial",
+          "name": "woodMaterial",
+          "Kd": [1, 1, 1],
+          "textureMap": "tex_nor_maps/Wood_020_basecolor.jpg",
+          "normalMap": "tex_nor_maps/Wood_020_normal.jpg"
+        }
+      ]
+    }
+  }
+]
+}

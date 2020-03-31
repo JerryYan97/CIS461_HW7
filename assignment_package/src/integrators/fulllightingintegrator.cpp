@@ -11,6 +11,8 @@ Color3f FullLightingIntegrator::Li(const Ray &ray, const Scene &scene, std::shar
 
     Ray rayPath(ray);
 
+    bool specBounce = false;
+
     // Simply declare a while loop that compares some current depth value to 0,
     // assuming that depth began as the maximum depth value.
     // Within this loop, we will add a check that breaks the loop early if the Russian Roulette conditions are satisfied.
@@ -26,13 +28,13 @@ Color3f FullLightingIntegrator::Li(const Ray &ray, const Scene &scene, std::shar
         }
 
         // Initialize common variable for integrator.
-        Normal3f n = isect.normalGeometric;
         Vector3f wo = - rayPath.direction;
 
         // Compute emitted light if ray hit an area light source.
+        // if(isect.objectHit->GetAreaLight() || (specBounce && (depth - bounceCounter == 1)))
         if(isect.objectHit->GetAreaLight())
         {
-            if(bounceCounter == depth)
+            if(bounceCounter == depth || specBounce)
             {
                 Color3f lightSource = isect.Le(wo);
                 L += beta * lightSource;
@@ -46,6 +48,31 @@ Color3f FullLightingIntegrator::Li(const Ray &ray, const Scene &scene, std::shar
 
         // Ask _objectHit_ to produce a BSDF
         isect.ProduceBSDF();
+
+        // If previous hit is a specular point, while this hit is not light source.
+        // Then, we reset the specBounce flag.
+        specBounce = false;
+
+        // Initialize normal for integrator:
+        // Normal3f n = isect.normalGeometric;
+        Normal3f n = isect.bsdf->normal;
+
+        // Check whether hit a specular object
+        Color3f mLiSpec(0.f);
+        Vector3f wiSpec;
+        float pdfSpec;
+        BxDFType flagsSpec;
+        Color3f fSpec = isect.bsdf->Sample_f(wo, &wiSpec, sampler->Get2D(), &pdfSpec, BSDF_ALL, &flagsSpec);
+        if(flagsSpec & BxDFType::BSDF_SPECULAR)
+        {
+            beta *= (fSpec * AbsDot(wiSpec, n) / pdfSpec);
+            specBounce = true;
+            rayPath = isect.SpawnRay(wiSpec);
+            --bounceCounter;
+            continue;
+        }
+
+
 
         // L calculation.
         // Computing the direct lighting component.
@@ -67,7 +94,8 @@ Color3f FullLightingIntegrator::Li(const Ray &ray, const Scene &scene, std::shar
         Color3f LiDir = light->Sample_Li(isect, sampler->Get2D(), &wi, &pdf);
 
         // Shadow Test and evaluate the LTE for light PDF sampling:
-        Ray rayWi = Ray(isect.point + isect.normalGeometric * 1e-4f, wi);
+        // Ray rayWi = Ray(isect.point + isect.normalGeometric * 1e-4f, wi);
+        Ray rayWi = isect.SpawnRay(wi);
         Intersection tempWiInsect;
         if(!scene.Intersect(rayWi, &tempWiInsect))
         {
@@ -128,7 +156,6 @@ Color3f FullLightingIntegrator::Li(const Ray &ray, const Scene &scene, std::shar
         Color3f fG = isect.bsdf->Sample_f(wo, &wiG, sampler->Get2D(), &pdfG, BSDF_ALL, &flagsG);
         if(IsBlack(fG) || pdfG == 0.f)
         {
-            // L += beta * LTerm;
             break;
         }
         beta *= fG * AbsDot(wiG, n) / pdfG;
