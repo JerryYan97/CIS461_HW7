@@ -356,6 +356,35 @@ bool JSONReader::LoadMaterial(QJsonObject &material, const QStringRef &local_pat
         auto result = std::make_shared<MicrofacetReflectionMaterial>(Kd, sigma, roughness, distributionType, textureMap, normalMap);
         mtl_map->insert(material["name"].toString(), result);
     }
+    else if(QString::compare(type, QString("MicrofacetTransmissiveMaterial")) == 0)
+    {
+        std::shared_ptr<QImage> textureMapRefl;
+        std::shared_ptr<QImage> textureMapTransmit;
+        std::shared_ptr<QImage> normalMap;
+        Color3f Kt = ToVec3(material["Kt"].toArray());
+        Color3f Kr = ToVec3(material["Kr"].toArray());
+        Float sigma = static_cast< float >(material["sigma"].toDouble());
+        float roughness = material["roughness"].toDouble();
+        float eta = material["eta"].toDouble();
+        int distributionType = material["distributionType"].toInt();
+        if(material.contains(QString("textureMapRefl"))) {
+            QString img_filepath = local_path.toString().append(material["textureMapRefl"].toString());
+            textureMapRefl = std::make_shared<QImage>(img_filepath);
+        }
+        if(material.contains(QString("textureMapTransmit"))) {
+            QString img_filepath = local_path.toString().append(material["textureMapTransmit"].toString());
+            textureMapTransmit = std::make_shared<QImage>(img_filepath);
+        }
+        if(material.contains(QString("normalMap"))) {
+            QString img_filepath = local_path.toString().append(material["normalMap"].toString());
+            normalMap = std::make_shared<QImage>(img_filepath);
+        }
+        auto result = std::make_shared<MicrofacetTransmissiveMaterial>(Kt, Kr, eta,
+                                                                       sigma, roughness,
+                                                                       distributionType, textureMapRefl,
+                                                                       textureMapTransmit, normalMap);
+        mtl_map->insert(material["name"].toString(), result);
+    }
     else
     {
         std::cout << "Could not parse the material!" << std::endl;

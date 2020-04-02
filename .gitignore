@@ -12,6 +12,7 @@ image.png
 *.so
 *.dll
 *.dylib
+*.exe
 
 # Qt-es
 

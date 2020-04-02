@@ -25,6 +25,8 @@ Color3f MicrofacetBRDF::Sample_f(const Vector3f &wo, Vector3f *wi, const Point2f
 
     // Compute PDF of _wi_ for microfacet reflection
     *pdf = distribution->Pdf(wo, wh) / (4 * glm::dot(wo, wh));
+
+    *sampledType = type;
     return f(wo, *wi);
 }
 

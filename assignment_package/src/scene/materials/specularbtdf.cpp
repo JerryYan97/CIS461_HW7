@@ -1,4 +1,4 @@
-#include "specularbTdf.h"
+#include "specularbtdf.h"
 
 Color3f SpecularBTDF::f(const Vector3f &wo, const Vector3f &wi) const
 {

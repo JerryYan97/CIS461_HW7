@@ -7,6 +7,7 @@ SOURCES += \
     $$PWD/mainwindow.cpp \
     $$PWD/mygl.cpp \
     $$PWD/scene/camera.cpp \
+    $$PWD/scene/materials/microfacetbtdf.cpp \
     $$PWD/scene/scene.cpp \
     $$PWD/openGL/drawable.cpp \
     $$PWD/openGL/glwidget277.cpp \
@@ -56,6 +57,7 @@ HEADERS += \
     $$PWD/scene/camera.h \
     $$PWD/la.h \
     $$PWD/drawable.h \
+    $$PWD/scene/materials/microfacetbtdf.h \
     $$PWD/scene/scene.h \
     $$PWD/openGL/drawable.h \
     $$PWD/openGL/glwidget277.h \

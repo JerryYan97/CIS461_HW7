@@ -5,9 +5,9 @@
     "scene" : {
       "camera" : {
         "target" : [0, 2.5, 0],
-        "eye" : [0, 5.5, -30],
+        "eye" : [0, 3.5, -4.5],
         "worldUp" : [0, 1, 0],
-        "fov" : 19.5,
+        "fov" : 60,
         "width" : 400,
         "height": 400
       },
@@ -54,6 +54,16 @@
         },
         {
           "shape" : "SquarePlane",
+          "name" : "Back Wall",
+          "material" : "matteWhite",
+          "transform" : {
+            "translate" : [0,2.5,-5],
+            "rotate" : [0,0,0],
+            "scale" : [10, 10, 1]
+          }
+        },
+        {
+          "shape" : "SquarePlane",
           "name" : "Ceiling Wall",
           "material" : "matteWhite",
           "transform" : {
@@ -88,7 +98,7 @@
           "shape" : "SquarePlane",
           "name" : "Light Source",
           "type" : "DiffuseAreaLight",
-          "lightColor" : [17,12,10],
+          "lightColor" : [10,10,10],
           "intensity" : 2,
           "transform" : {
             "translate" : [0,7.45,0],
@@ -134,7 +144,7 @@
         {
           "type": "MicrofacetReflectionMaterial",
           "name": "microFacetMaterialTrowbridgeReitz",
-          "Kd" : [0.85, 0.81, 0.78],
+          "Kd" : [1, 0, 0],
           "sigma": 0,
           "roughness" : 0.5,
           "distributionType" : 0
@@ -142,7 +152,7 @@
         {
           "type": "MicrofacetReflectionMaterial",
           "name": "microFacetMaterialBeckmann",
-          "Kd" : [0.85, 0.81, 0.78],
+          "Kd" : [1, 1, 0.2],
           "sigma": 0,
           "roughness" : 0.5,
           "distributionType" : 1

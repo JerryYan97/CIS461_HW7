@@ -1,7 +1,8 @@
 #ifndef MICROFACETMATERIAL_H
 #define MICROFACETMATERIAL_H
 #include "material.h"
-#include "microfacetbrdf.h"
+
+
 
 class MicrofacetMaterial
 {
@@ -42,11 +43,20 @@ private:
 class MicrofacetTransmissiveMaterial : public Material
 {
 public:
-    MicrofacetTransmissiveMaterial(const Color3f &Kt, float indexOfRefraction,
-                                   const std::shared_ptr<QImage> &textureMap,
+    MicrofacetTransmissiveMaterial(const Color3f &Kt, const Color3f &Kr, float indexOfRefraction,
+                                   float sigma,
+                                   float iRoughness,
+                                   int distributionType,
+                                   const std::shared_ptr<QImage> &textureMapRefl,
+                                   const std::shared_ptr<QImage> &textureMapTransmit,
                                    const std::shared_ptr<QImage> &normalMap)
-                         : Kt(Kt), indexOfRefraction(indexOfRefraction),
-                           textureMap(textureMap), normalMap(normalMap)
+                         : Kt(Kt), Kr(Kr), indexOfRefraction(indexOfRefraction),
+                           textureMapRefl(textureMapRefl),
+                           textureMapTransmit(textureMapTransmit),
+                           normalMap(normalMap),
+                           sigma(sigma),
+                           roughness(iRoughness),
+                           mType(distributionType)
                      {}
 
     void ProduceBSDF(Intersection *isect) const;
@@ -54,11 +64,21 @@ private:
     Color3f Kt;                    // The spectral transmission of this material.
                                    // This is just the base color of the material
 
+    Color3f Kr;
+
     float indexOfRefraction;       // The IoR of this glass. We assume the IoR of
                                    // any external medium is that of a vacuum: 1.0
 
-    std::shared_ptr<QImage> textureMap; // The color obtained from this (assuming it is non-null) is multiplied with the base material color.
+    std::shared_ptr<QImage> textureMapRefl;
+    std::shared_ptr<QImage> textureMapTransmit;
+
     std::shared_ptr<QImage> normalMap;
+
+    float sigma;
+
+    float roughness;
+
+    int mType;
 };
 
 #endif // MICROFACETMATERIAL_H

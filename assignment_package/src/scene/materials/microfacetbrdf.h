@@ -7,7 +7,10 @@ class MicrofacetBRDF : public BxDF
 {
 public:
     MicrofacetBRDF(const Color3f &R, MicrofacetDistribution* distribution, Fresnel* fresnel)
-        : BxDF(BxDFType(BSDF_REFLECTION | BSDF_GLOSSY)), R(R), distribution(distribution), fresnel(fresnel) {}
+     : BxDF(BxDFType(BSDF_REFLECTION | BSDF_GLOSSY)), R(R), distribution(distribution), fresnel(fresnel) {}
+    // : BxDF(BxDFType(BSDF_REFLECTION | BSDF_DIFFUSE)), R(R), distribution(distribution), fresnel(fresnel) {}
+        // : BxDF(BxDFType(BSDF_REFLECTION | BSDF_GLOSSY)), R(R), distribution(distribution), fresnel(fresnel) {}
+
 
     virtual ~MicrofacetBRDF(){delete fresnel; delete distribution;}
 

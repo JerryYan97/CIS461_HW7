@@ -5,7 +5,7 @@
     "scene" : {
       "camera" : {
         "target" : [0, 0, 0],
-        "eye" : [-20, 5, -50],
+        "eye" : [10, 20, -30],
         "worldUp" : [0, 1, 0],
         "fov" : 19.5,
         "width" : 512,
@@ -15,182 +15,92 @@
         {
           "shape" : "SquarePlane",
           "name" : "Floor",
-          "material" : "stoneMaterial",
+          "material" : "soilMaterial",
+          "transform" : {
+            "translate" : [0, -2.5, -15],
+            "rotate" : [-90, 0, 0],
+            "scale" : [15, 15, 1]
+          }
+        },
+        {
+          "shape" : "SquarePlane",
+          "name" : "Floor",
+          "material" : "soilMaterial",
           "transform" : {
             "translate" : [0, -2.5, 0],
             "rotate" : [-90, 0, 0],
-            "scale" : [10, 10, 1]
+            "scale" : [15, 15, 1]
           }
         },
         {
           "shape" : "SquarePlane",
           "name" : "Floor",
-          "material" : "stoneMaterial",
+          "material" : "soilMaterial",
           "transform" : {
-            "translate" : [0, -2.5, -10],
+            "translate" : [-15, -2.5, 0],
             "rotate" : [-90, 0, 0],
-            "scale" : [10, 10, 1]
+            "scale" : [15, 15, 1]
           }
         },
         {
           "shape" : "SquarePlane",
           "name" : "Floor",
-          "material" : "stoneMaterial",
+          "material" : "soilMaterial",
           "transform" : {
-            "translate" : [0, -2.5, -20],
+            "translate" : [0, -2.5, 15],
             "rotate" : [-90, 0, 0],
-            "scale" : [10, 10, 1]
+            "scale" : [15, 15, 1]
           }
         },
         {
           "shape" : "SquarePlane",
           "name" : "Floor",
-          "material" : "stoneMaterial",
+          "material" : "soilMaterial",
           "transform" : {
-            "translate" : [0, -2.5, -30],
+            "translate" : [-15, -2.5, 15],
             "rotate" : [-90, 0, 0],
-            "scale" : [10, 10, 1]
+            "scale" : [15, 15, 1]
           }
         },
         {
           "shape" : "SquarePlane",
           "name" : "Floor",
-          "material" : "stoneMaterial",
+          "material" : "soilMaterial",
           "transform" : {
-            "translate" : [0, -2.5, 10],
+            "translate" : [0, -2.5, 30],
             "rotate" : [-90, 0, 0],
-            "scale" : [10, 10, 1]
-          }
-        },
-        {
-          "shape" : "SquarePlane",
-          "name" : "Floor",
-          "material" : "stoneMaterial",
-          "transform" : {
-            "translate" : [10, -2.5, 0],
-            "rotate" : [-90, 0, 0],
-            "scale" : [10, 10, 1]
-          }
-        },
-        {
-          "shape" : "SquarePlane",
-          "name" : "Floor",
-          "material" : "stoneMaterial",
-          "transform" : {
-            "translate" : [10, -2.5, -10],
-            "rotate" : [-90, 0, 0],
-            "scale" : [10, 10, 1]
-          }
-        },
-        {
-          "shape" : "SquarePlane",
-          "name" : "Floor",
-          "material" : "stoneMaterial",
-          "transform" : {
-            "translate" : [10, -2.5, -20],
-            "rotate" : [-90, 0, 0],
-            "scale" : [10, 10, 1]
-          }
-        },
-        {
-          "shape" : "SquarePlane",
-          "name" : "Floor",
-          "material" : "stoneMaterial",
-          "transform" : {
-            "translate" : [10, -2.5, -30],
-            "rotate" : [-90, 0, 0],
-            "scale" : [10, 10, 1]
-          }
-        },
-        {
-          "shape" : "SquarePlane",
-          "name" : "Floor",
-          "material" : "stoneMaterial",
-          "transform" : {
-            "translate" : [10, -2.5, 10],
-            "rotate" : [-90, 0, 0],
-            "scale" : [10, 10, 1]
-          }
-        },
-        {
-          "shape" : "SquarePlane",
-          "name" : "Floor",
-          "material" : "stoneMaterial",
-          "transform" : {
-            "translate" : [-10, -2.5, 0],
-            "rotate" : [-90, 0, 0],
-            "scale" : [10, 10, 1]
-          }
-        },
-        {
-          "shape" : "SquarePlane",
-          "name" : "Floor",
-          "material" : "stoneMaterial",
-          "transform" : {
-            "translate" : [-10, -2.5, -10],
-            "rotate" : [-90, 0, 0],
-            "scale" : [10, 10, 1]
-          }
-        },
-        {
-          "shape" : "SquarePlane",
-          "name" : "Floor",
-          "material" : "stoneMaterial",
-          "transform" : {
-            "translate" : [-10, -2.5, -20],
-            "rotate" : [-90, 0, 0],
-            "scale" : [10, 10, 1]
-          }
-        },
-        {
-          "shape" : "SquarePlane",
-          "name" : "Floor",
-          "material" : "stoneMaterial",
-          "transform" : {
-            "translate" : [-10, -2.5, -30],
-            "rotate" : [-90, 0, 0],
-            "scale" : [10, 10, 1]
-          }
-        },
-        {
-          "shape" : "SquarePlane",
-          "name" : "Floor",
-          "material" : "stoneMaterial",
-          "transform" : {
-            "translate" : [-10, -2.5, 10],
-            "rotate" : [-90, 0, 0],
-            "scale" : [10, 10, 1]
+            "scale" : [15, 15, 1]
           }
         },
         {
           "shape" : "Mesh",
-          "name" : "HanioTowerStick1",
-          "filename" : "mesh/cylinder.obj",
+          "name" : "HanoiTowerStick1",
           "material" : "woodMaterial",
+          "filename" : "mesh/cylinder.obj",
           "transform" : {
-            "translate" : [-5, -4, 0],
+            "translate" : [-5, -2.5, 0],
             "rotate" : [0, 0, 0],
             "scale" : [0.5, 0.5, 0.5]
           }
         },
         {
           "shape" : "Mesh",
-          "name" : "HanioTowerStick2",
-          "filename" : "mesh/cylinder.obj",
+          "name" : "HanoiTowerStick2",
           "material" : "woodMaterial",
+          "filename" : "mesh/cylinder.obj",
           "transform" : {
-            "translate" : [0, -4, 0],
+            "translate" : [0, -2.5, 0],
             "rotate" : [0, 0, 0],
             "scale" : [0.5, 0.5, 0.5]
           }
         },
         {
           "shape" : "Mesh",
-          "name" : "HanioTowerStick3",
-          "filename" : "mesh/cylinder.obj",
+          "name" : "HanoiTowerStick3",
           "material" : "woodMaterial",
+          "filename" : "mesh/cylinder.obj",
           "transform" : {
-            "translate" : [5, -4, 0],
+            "translate" : [5, -2.5, 0],
             "rotate" : [0, 0, 0],
             "scale" : [0.5, 0.5, 0.5]
           }
@@ -204,7 +114,7 @@
           "lightColor" : [10,10,10],
           "intensity" : 4,
           "transform" : {
-            "translate" : [0,9.5,0],
+            "translate" : [0,20,0],
             "rotate" : [90,0,0],
             "scale" : [3, 3, 1]
           },
@@ -219,7 +129,7 @@
           "lightColor" : [10,10,10],
           "intensity" : 4,
           "transform" : {
-            "translate" : [5,9.5,0],
+            "translate" : [5,20,0],
             "rotate" : [90,0,0],
             "scale" : [3, 3, 1]
           },
@@ -234,7 +144,7 @@
           "lightColor" : [10,10,10],
           "intensity" : 4,
           "transform" : {
-            "translate" : [-5,9.5,0],
+            "translate" : [-5,20,0],
             "rotate" : [90,0,0],
             "scale" : [3, 3, 1]
           },
@@ -249,7 +159,7 @@
           "lightColor" : [10,9.5,10],
           "intensity" : 4,
           "transform" : {
-            "translate" : [0,9.5,10],
+            "translate" : [0,20,10],
             "rotate" : [90,0,0],
             "scale" : [3, 3, 1]
           },
@@ -264,7 +174,7 @@
           "lightColor" : [10,10,10],
           "intensity" : 4,
           "transform" : {
-            "translate" : [0,9.5,-10],
+            "translate" : [0,20,-10],
             "rotate" : [90,0,0],
             "scale" : [3, 3, 1]
           },
@@ -281,10 +191,10 @@
         },
         {
           "type": "MatteMaterial",
-          "name": "stoneMaterial",
+          "name": "soilMaterial",
           "Kd": [1, 1, 1],
-          "textureMap": "tex_nor_maps/stone.jpg",
-          "normalMap": "tex_nor_maps/stoneN.jpg"
+          "textureMap": "tex_nor_maps/Ground_Forest_002_baseColor.jpg",
+          "normalMap": "tex_nor_maps/Ground_Forest_002_normal.jpg"
         },
         {
           "type": "MatteMaterial",

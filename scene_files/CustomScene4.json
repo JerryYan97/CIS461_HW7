@@ -63,15 +63,24 @@
           }
         },
         {
-          "shape" : "Mesh",
-          "name" : "rough microfacet sphere",
-          "material" : "microFacetMaterialBeckmann",
+          "shape" : "Sphere",
+          "name" : "glossy microfacet sphere",
+          "material" : "fuzzyGlass",
           "transform" : {
-            "translate" : [-0.75, -1, 0],
-            "rotate" : [0, 180, 0],
-            "scale" : [2, 2, 2]
-          },
-          "filename" : "mesh/lowPolyBunny.obj"
+            "translate" : [2, 1.25, 0],
+            "rotate" : [0,0,0],
+            "scale" : [1, 1, 1]
+          }
+        },
+        {
+          "shape" : "Sphere",
+          "name" : "rough microfacet sphere",
+          "material" : "fuzzyGlass",
+          "transform" : {
+            "translate" : [-2, 1.25, 0],
+            "rotate" : [0,0,0],
+            "scale" : [1, 1, 1]
+          }
         }
       ],
       "lights" : [
@@ -79,7 +88,7 @@
           "shape" : "SquarePlane",
           "name" : "Light Source",
           "type" : "DiffuseAreaLight",
-          "lightColor" : [17,12,8],
+          "lightColor" : [10,10,10],
           "intensity" : 2,
           "transform" : {
             "translate" : [0,7.45,0],
@@ -123,19 +132,13 @@
           "eta": 1.55
         },
         {
-          "type": "MicrofacetReflectionMaterial",
-          "name": "microFacetMaterialTrowbridgeReitz",
-          "Kd" : [0.85, 0.81, 0.78],
+          "type": "MicrofacetTransmissiveMaterial",
+          "name": "fuzzyGlass",
+          "Kt" : [1, 1, 1],
           "sigma": 0,
-          "roughness" : 0.8,
-          "distributionType" : 0
-        },
-        {
-          "type": "MicrofacetReflectionMaterial",
-          "name": "microFacetMaterialBeckmann",
-          "Kd" : [0.85, 0.81, 0.78],
-          "sigma": 0,
-          "roughness" : 0.8,
+          "roughness" : 0.2,
+          "Kr": [1, 1, 1],
+          "eta": 1.55,
           "distributionType" : 1
         },
         {
